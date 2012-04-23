@@ -1,65 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/stylesheet.css" />
+    <link rel="stylesheet" href="stylesheets/docs.css"/>
+    <link rel="stylesheet" href="stylesheets/bootstrap-responsive.css"/>
+    <script type="text/javascript" src="javascripts/jquery.js"></script>
 
-  <link rel="stylesheet" href="stylesheets/stylesheet.css" />
-  <link rel="stylesheet" href="stylesheets/docs.css"/>
-  <link rel="stylesheet" href="stylesheets/bootstrap-responsive.css"/>
-  <script type="text/javascript" src="javascripts/jquery.js"></script>
+    <title>计算机科学系(惠州学院)</title>
 
-  <title>计算机科学系(惠州学院)</title>
-  <meta name="description" content="计算机科学系首页">
+    <meta name="description" content="计算机科学系首页">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
 
-</head>
+  <body>
 
-<body>
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="">计算机科学系</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li class="active">
-                <a href="">首页</a>
-              </li>
-              <li class="">
-                <a href="">概况</a>
-              </li>
-              <li class="">
-                <a href="">教学管理</a>
-              </li>
-              <li class="">
-                <a href="">学术科研</a>
-              </li>
-              <li class="">
-                <a href="">实验室</a>
-              </li>
-              <li class="">
-                <a href="">招生就业</a>
-              </li>
-              <li class="">
-                <a href="">系务公开</a>
-              </li>
-              <li class="divider-vertical"></li>
-              <li class="">
-                <a href="http://www.hzu.edu.cn/" target="_blank">学院首页</a>
-              </li>
-              <form class="navbar-search pull-left" action="">
-                <input type="text" class="search-query span2" placeholder="搜索">
-              </form>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div id="menu"></div>
+    <div id="content">Content</div>
+    <div id="foot"></div>
 
-</body>
+    <script type="text/javascript" charset="utf-8">
+      //User: Mouse
+      //Comment:  load menu等html文件
+      //date: 2012-04-23
+      $(document).ready(function(){ 
+        $("#menu").load("menu.html");
+        $("#foot").load("foot.html");
+      });
+    </script>
+
+  </body>
 </html>
