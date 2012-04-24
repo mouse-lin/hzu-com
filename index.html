@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="stylesheets/stylesheet.css" />
     <link rel="stylesheet" href="stylesheets/docs.css"/>
     <link rel="stylesheet" href="stylesheets/bootstrap-responsive.css"/>
+    <link rel="stylesheet" href="stylesheets/style.css"/>
     <script type="text/javascript" src="javascripts/jquery.js"></script>
 
     <title>计算机科学系(惠州学院)</title>
@@ -12,12 +13,33 @@
     <meta name="description" content="计算机科学系首页">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
+    <script language="javascript" type="text/javascript">
+      $(document).ready(function(){
+          $("#back-top").hide();
+          $(function () {
+              $(window).scroll(function () {
+                  if ($(this).scrollTop() > 100) {
+                      $('#back-top').fadeIn();
+                  } else {
+                      $('#back-top').fadeOut();
+                  }
+              });
+
+              $('#back-top').click(function () {
+                  $('body,html').animate({
+                      scrollTop: 0
+                  }, 800);
+                  return false;
+              });
+          }); 
+      });
+    </script>
   </head>
 
   <body>
 
     <div id="menu"></div>
-    <div id="content">Content</div>
+    <div id="content" style='height:900px;'>Content</div>
     <div id="foot"></div>
 
     <script type="text/javascript" charset="utf-8">
@@ -30,5 +52,6 @@
       });
     </script>
 
+    <p id="back-top"><a href="#top"><span></span><em>Back to top</em> </a></p>
   </body>
 </html>

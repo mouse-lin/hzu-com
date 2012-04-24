@@ -1,0 +1,44 @@
+/* back to top */
+#back-top {
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+    bottom: 20;
+    width: 180px;
+    text-align: right;
+    clear: both;
+}
+#back-top a {
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-transition: background-color .7s;
+    -moz-transition: background-color .7s;
+    -o-transition: background-color .7s;
+    transition: background-color .7s;
+}
+#back-top a:hover {
+    color: red;
+}
+#back-top em {
+    font: normal 12px/100% "Lucida Grande", Arial, "Lucida Sans Unicode", sans-serif;
+    letter-spacing: 1px;
+    float: right;
+}
+#back-top span {
+    width: 28px;
+    height: 28px;
+    background: url(../images/nav-icons.png) no-repeat -8px -577px;
+    background-color: rgba(255,255,255,1);
+    display: block;
+    float: right;
+    cursor: pointer;
+    margin: -8px 0 0 6px;
+    -webkit-border-radius: 10em;
+    -moz-border-radius: 10em;
+    border-radius: 10em;
+}
+#back-top a:hover span {
+    background-color: #f5ec82;
+}
+
