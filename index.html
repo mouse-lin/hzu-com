@@ -7,14 +7,33 @@
     <link rel="stylesheet" href="stylesheets/bootstrap-responsive.css"/>
     <link rel="stylesheet" href="stylesheets/style.css"/>
     <script type="text/javascript" src="javascripts/jquery.js"></script>
+    
 
     <title>计算机科学系(惠州学院)</title>
 
     <meta name="description" content="计算机科学系首页">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  </head>
 
-    <script language="javascript" type="text/javascript">
-      $(document).ready(function(){
+  <body>
+  
+
+    <div id="menu"></div>
+    <div id="content" style="height:900px;">
+	  	<div id="sky" class="sunny" style="top: 0px; "></div>
+      <img src="images/sun-rays.png" alt="sun rays" id="sun-rays" style="top:10px;width:200px ">
+      <img src="images/sun-face.png" alt="sun" id="sun-face" style="top: 140px;position:absolute;left:48px;width:100px ">
+      <div id="grass" class="sunny" style="bottom: 0px; "></div></div>
+      <div class="well">mouse</div>
+    </div>
+    <div id="foot"></div>
+
+    <script type="text/javascript" charset="utf-8">
+      //User: Mouse
+      //Comment:  load menu等html文件
+      //date: 2012-04-23
+      $(document).ready(function(){ 
           $("#back-top").hide();
           $(function () {
               $(window).scroll(function () {
@@ -32,24 +51,33 @@
                   return false;
               });
           }); 
+
+          $("#menu").load("menu.html");
+          $("#foot").load("foot.html");
+          start();
       });
-    </script>
-  </head>
-
-  <body>
-
-    <div id="menu"></div>
-    <div id="content" style='height:900px;'>Content</div>
-    <div id="foot"></div>
-
-    <script type="text/javascript" charset="utf-8">
-      //User: Mouse
-      //Comment:  load menu等html文件
-      //date: 2012-04-23
-      $(document).ready(function(){ 
-        $("#menu").load("menu.html");
-        $("#foot").load("foot.html");
-      });
+     //雨点移动效果可以参考这个
+     // function sunFaceMoveUp(sunFace){ 
+     //   sunFace.animate({ top:"100" },3000);
+     // };
+     // function sunFaceMoveDown(sunFace){ 
+     //   sunFace.animate({ top:180 },3000);
+     // };
+      function start(){  
+          var elSunRays = $('#sun-rays');
+          var sunFace = $('#sun-face');
+          var sunRotation = 0;
+          setInterval(function() {
+            if (elSunRays) {
+                sunRotation ++;
+                if (sunRotation >= 361) sunRotation = 0;
+                elSunRays.css('-webkit-transform', 'rotate(' + sunRotation + 'deg)');
+                elSunRays.css('-moz-transform', 'rotate(' + sunRotation + 'deg)');
+                elSunRays.css('-ms-transform', 'rotate(' + sunRotation + 'deg)');
+                elSunRays.css('transform', 'rotate(' + sunRotation + 'deg)');
+            }
+          }, 30);
+       };
     </script>
 
     <p id="back-top"><a href="#top"><span></span><em>Back to top</em> </a></p>
