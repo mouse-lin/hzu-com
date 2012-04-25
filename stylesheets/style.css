@@ -89,3 +89,8 @@
     width: 1100px;
     margin: -100px;
     height: 225px;}
+#top_content {
+       border-bottom: 20px solid DarkGoldenRod;
+    border-radius: 9em 9em 9em 9em;
+    margin-bottom: 45px;
+}
