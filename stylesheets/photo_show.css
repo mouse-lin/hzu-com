@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-#photo-show { border-radius: 10px; width:750px; margin:10px 110px 50px 470px; background:#CECECE; padding:10px; font-size:12px;  }
+#photo-show { border-radius: 10px; width:730px; margin:10px 110px 50px 490px; background:#CECECE; padding:10px; font-size:12px;  }
 
 /* slider layout */
 .lof-slidecontent { position:relative;	overflow:hidden;	}
@@ -41,7 +41,7 @@ ul.sliders-wrap-inner li img{	padding:0px;	}
 	position:absolute;
 	bottom:50px;
 	left:0px;
-	width:350px;
+	width:290px;
 	background:url(../images/bg_trans.png);
 	height:100px;
 	padding:10px;

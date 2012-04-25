@@ -83,5 +83,9 @@
 }
 #board-line img {
     width: 210px;
-    height: 300px;
+    height: 280px;
 }
+#footer-img {
+    width: 1100px;
+    margin: -100px;
+    height: 225px;}

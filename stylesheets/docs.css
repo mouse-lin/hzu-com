@@ -271,8 +271,7 @@ hr.soften {
   box-shadow: 0 -15px 10px #000000;
   border-radius: 8em 8em 1em 1em;
   background-color: #eee;
-  background-image: url(../images/key.png);
-  background-repeat: repeat-x;
+  height: 75px;
 }
 .footer p {
   margin-bottom: 0;
