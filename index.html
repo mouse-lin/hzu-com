@@ -14,7 +14,7 @@
 
     
     <!--天气js-->
-    <script type="text/javascript" src="javascripts/weather.js"></script>
+    <!script type="text/javascript" src="javascripts/weather.js"></script>
     
     <!--Photo show-->
     <link rel="stylesheet" type="text/css" href="stylesheets/photo_show.css">
@@ -31,9 +31,6 @@
         <div id="photo-show"></div>
         <div id="weather"></div>
       </div>
-      <!--
-      <canvas id='show-rain' width="800" height="600"></canvas>
-      -->
       <hr/>
       <div id="below_content" class="container-fluid" ></div>
     </div>
@@ -44,19 +41,19 @@
       //Comment:  load menu等html文件, 并且判断时间显示出页面
       //date: 2012-04-23
       $("#photo-show").load("photo_show.html");
-      var date = new Date();
-      var hour = date.getHours();
-      var sunHour = [6,7,8,9,10,11,12,13,14,15,16,17,18];
-      var dayTime = "night";
-      if($.inArray(hour,sunHour) != -1 )
-        dayTime = "sun";
-      var weather = $("#weather");
-      var weatherHtmlFile = dayTime == "sun"? "sun.html" : "night.html"; 
-      weather.load(weatherHtmlFile);
+      //var date = new Date();
+      //var hour = date.getHours();
+      //var sunHour = [6,7,8,9,10,11,12,13,14,15,16,17,18];
+      //var dayTime = "night";
+      //if($.inArray(hour,sunHour) != -1 )
+      //  dayTime = "sun";
+      //var weather = $("#weather");
+      //var weatherHtmlFile = dayTime == "sun"? "sun.html" : "night.html"; 
+      //weather.load(weatherHtmlFile);
 
       $("#menu").load("menu.html");
       $("#foot").load("foot.html");
-      $("#below_content").load("below_content.html");
+      //$("#below_content").load("below_content.html");
       
       $(document).ready(function(){ 
           //start(dayTime); // 启动天气效果;
