@@ -525,7 +525,7 @@ form.well {
 
 /* Tighten up spacing */
 .well hr {
-  margin: 18px 0;
+  margin: 8px 0;
 }
 
 /* Fake the :focus state to demo it */
