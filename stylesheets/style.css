@@ -91,8 +91,9 @@
     width: 878px;
 }
 #top_content {
-    border: 10px solid Cornsilk;
-    border-radius: 11em 9em 9em 11em;
+    border-bottom: 15px solid DarkGrey;
+    border-right: 10px solid DarkGrey;
+    border-radius: 0 2em 3em 10em;
     margin-bottom: 45px;
 }
 .well h2 {
