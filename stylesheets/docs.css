@@ -266,9 +266,13 @@ hr.soften {
 /* Footer
 -------------------------------------------------- */
 .footer {
-  margin-top: 45px;
-  padding: 35px 0 36px;
-  border-top: 1px solid #e5e5e5;
+  margin-top: 160px;
+  padding: 100px 0px 48px;
+  box-shadow: 0 -15px 10px #000000;
+  border-radius: 8em 8em 1em 1em;
+  background-color: #eee;
+  background-image: url(../images/key.png);
+  background-repeat: repeat-x;
 }
 .footer p {
   margin-bottom: 0;

@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-#photo-show { border-radius: 10px; width:800px; margin:10px 110px 10px 330px; background:#CECECE; padding:10px; font-size:12px;  }
+#photo-show { border-radius: 10px; width:800px; margin:10px 110px 50px 330px; background:#CECECE; padding:10px; font-size:12px;  }
 
 /* slider layout */
 .lof-slidecontent { position:relative;	overflow:hidden;	}
