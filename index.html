@@ -23,16 +23,19 @@
   <body>
 
     <div id="menu"></div>
-    <div id="content" style='height:900px;'>
+    <div id="content">
+      <div id='top_content'>
       <img src="images/sun-rays.png" alt="sun rays" id="sun-rays" style="top:30px;width:200px;position:absolute;">
       <img src="images/sun-face.png" alt="sun" id="sun-face" style="top: 80px;position:absolute;left:48px;width:100px ">
       <img src="images/logo.png" alt="sun" id="sun-face" style="top: 45px;position:fixed;right:0px;width:85px ">
-      <div id="photo-show">
-      <!------------------------------------- END OF THE CONTENT ------------------------------------------------->
+      <div id="photo-show"></div>
       </div>
       <!--
       <canvas id='show-rain' width="800" height="600"></canvas>
       -->
+
+      <hr/>
+      <div id="below_content" class="container-fluid" ></div>
     </div>
     <div id="foot"></div>
 
@@ -43,6 +46,7 @@
       $("#menu").load("menu.html");
       $("#foot").load("foot.html");
       $("#photo-show").load("photo_show.html");
+      $("#below_content").load("below_content.html");
       
       $(document).ready(function(){ 
 
