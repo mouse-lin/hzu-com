@@ -48,8 +48,7 @@
       <!--
       <canvas id='show-rain' width="800" height="600"></canvas>
       -->
-      
-      <div style="position:absolute;top:90px"><a href="#" id="hideClass"><img src="images/weather/night/star_fi.png"></img></a></div>
+      <div style="position:absolute;top:90px"><span id="hideClass" class="badge badge-error">隐藏</span></div>
       <div id="below_content" class="container" style="width:90%;" ></div>
       <div id="bottom-display">
         <h3>{ Think Different }</h3>
@@ -84,9 +83,10 @@
       $(document).ready(function(){ 
           $("#hideClass").toggle(function(){ 
               $("#top_content").hide("slow");
-              //$("#hideClass").val() = "打开";
+              $("#hideClass").html("显示") ;
           },function(){ 
              $("#top_content").show("slow"); 
+             $("#hideClass").html("隐藏");
           });
           start(dayTime); // 启动天气效果;
           // 返回顶部按钮

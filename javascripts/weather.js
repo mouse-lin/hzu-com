@@ -38,8 +38,8 @@ function start(dayTime){
        var elSunRays = $('#sun-rays');
        var sunFace = $('#sun-face');
        var sunRotation = 0;
-       cloudMoveRight(cloudRed);
-       cloudMoveLeft(cloudGreen);
+       //cloudMoveRight(cloudRed);
+       //cloudMoveLeft(cloudGreen);
        setInterval(function() {
            if (elSunRays) {
                sunRotation ++;
