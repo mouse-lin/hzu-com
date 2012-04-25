@@ -11,29 +11,29 @@
     <link rel="stylesheet" href="stylesheets/bootstrap-responsive.css"/>
     <link rel="stylesheet" href="stylesheets/style.css"/>
     <script type="text/javascript" src="javascripts/jquery.js"></script>
-    
 
+    
+    <!--天气js-->
+    <script type="text/javascript" src="javascripts/weather.js"></script>
+    
     <!--Photo show-->
     <link rel="stylesheet" type="text/css" href="stylesheets/photo_show.css">
-    <script language="javascript" type="text/javascript" src="javascripts/jquery.easing.js"></script>
-    <script language="javascript" type="text/javascript" src="javascripts/script.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.easing.js"></script>
+    <script type="text/javascript" src="javascripts/script.js"></script>
 
   </head>
 
-  <body>
+  <body id="body">
 
     <div id="menu"></div>
     <div id="content">
       <div id='top_content'>
-      <img src="images/sun-rays.png" alt="sun rays" id="sun-rays" style="top:30px;width:200px;position:absolute;">
-      <img src="images/sun-face.png" alt="sun" id="sun-face" style="top: 80px;position:absolute;left:48px;width:100px ">
-      <img src="images/logo.png" alt="sun" id="sun-face" style="top: 45px;position:fixed;right:0px;width:85px ">
-      <div id="photo-show"></div>
+        <div id="photo-show"></div>
+        <div id="weather"></div>
       </div>
       <!--
       <canvas id='show-rain' width="800" height="600"></canvas>
       -->
-
       <hr/>
       <div id="below_content" class="container-fluid" ></div>
     </div>
@@ -41,17 +41,26 @@
 
     <script type="text/javascript" charset="utf-8">
       //User: Mouse
-      //Comment:  load menu等html文件
+      //Comment:  load menu等html文件, 并且判断时间显示出页面
       //date: 2012-04-23
+      var date = new Date();
+      var hour = date.getHours();
+      var sunHour = [6,7,8,9,10,11,12,13,14,15,16,17,18];
+      var dayTime = "night";
+      if($.inArray(hour,sunHour) != -1 )
+        dayTime = "sun";
+      var weather = $("#weather");
+      var weatherHtmlFile = dayTime == "sun"? "sun.html" : "night.html"; 
+      weather.load(weatherHtmlFile);
+
       $("#menu").load("menu.html");
       $("#foot").load("foot.html");
       $("#photo-show").load("photo_show.html");
       $("#below_content").load("below_content.html");
       
       $(document).ready(function(){ 
-
-          start();
-          
+          start(dayTime); // 启动天气效果;
+          // 返回顶部按钮
           $("#back-top").hide();
           $(function () {
               $(window).scroll(function () {
@@ -69,47 +78,25 @@
                   return false;
               });
           }); 
-              // buttons for next and previous item						 
-              var buttons = { previous:$('#jslidernews1 .button-previous') ,
-                      next:$('#jslidernews1 .button-next') };			
-               $('#jslidernews1').lofJSidernews( { interval : 4000,
-                                direction		: 'opacitys',	
-                                easing			: 'easeInOutExpo',
-                                duration		: 1200,
-                                auto		 	: false,
-                                maxItemDisplay  : 4,
-                                navPosition     : 'horizontal', // horizontal
-                                navigatorHeight : 32,
-                                navigatorWidth  : 80,
-                                mainWidth		: 980,
-                                buttons			: buttons 
-              } );	
+          //---------------------------------------------
+          // buttons for next and previous item						 
+          var buttons = { previous:$('#jslidernews1 .button-previous') ,
+                  next:$('#jslidernews1 .button-next') };			
+           $('#jslidernews1').lofJSidernews( { interval : 4000,
+                            direction		: 'opacitys',	
+                            easing			: 'easeInOutExpo',
+                            duration		: 1200,
+                            auto		 	: false,
+                            maxItemDisplay  : 4,
+                            navPosition     : 'horizontal', // horizontal
+                            navigatorHeight : 32,
+                            navigatorWidth  : 80,
+                            mainWidth		: 980,
+                            buttons			: buttons 
+          } );	
           
       });
-     //雨点移动效果可以参考这个
-     // function sunFaceMoveUp(sunFace){ 
-     //   sunFace.animate({ top:"100" },3000);
-     // };
-     // function sunFaceMoveDown(sunFace){ 
-     //   sunFace.animate({ top:180 },3000);
-     // };
-      function start(){  
-          var elSunRays = $('#sun-rays');
-          var sunFace = $('#sun-face');
-          var sunRotation = 0;
-          setInterval(function() {
-            if (elSunRays) {
-                sunRotation ++;
-                if (sunRotation >= 361) sunRotation = 0;
-                elSunRays.css('-webkit-transform', 'rotate(' + sunRotation + 'deg)');
-                elSunRays.css('-moz-transform', 'rotate(' + sunRotation + 'deg)');
-                elSunRays.css('-ms-transform', 'rotate(' + sunRotation + 'deg)');
-                elSunRays.css('transform', 'rotate(' + sunRotation + 'deg)');
-            }
-          }, 30);
-       };
     </script>
-
     <p id="back-top"><a href="#top"><span></span><em>回到顶部</em> </a></p>
   </body>
 </html>
