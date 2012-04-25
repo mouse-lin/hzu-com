@@ -90,7 +90,7 @@
     margin: -100px;
     height: 225px;}
 #top_content {
-       border-bottom: 20px solid DarkGoldenRod;
-    border-radius: 9em 9em 9em 9em;
+    border: 10px solid Cornsilk;
+    border-radius: 11em 9em 9em 11em;
     margin-bottom: 45px;
 }
