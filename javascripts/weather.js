@@ -33,7 +33,6 @@ function start(dayTime){
    //白天情景
    if(dayTime == "sun"){  
        $("#body").css("background-image","url(images/weather/sun/sun.jpg)")
-       //weather.load("sun.html");
        var cloudRed = $('#cloud-red');
        var cloudGreen = $('#cloud-green');
        var elSunRays = $('#sun-rays');
@@ -44,7 +43,6 @@ function start(dayTime){
        setInterval(function() {
            if (elSunRays) {
                sunRotation ++;
-               //cloudRed.css("width")
                if (sunRotation >= 361) sunRotation = 0;
                elSunRays.css('-webkit-transform', 'rotate(' + sunRotation + 'deg)');
                elSunRays.css('-moz-transform', 'rotate(' + sunRotation + 'deg)');
@@ -53,7 +51,6 @@ function start(dayTime){
            }
        }, 30);
    }else{ 
-       //weather.load("night.html");
       //---------------------------------------------
       // 晚上情景
       $("#body").css("background-image","url(images/weather/night/night.jpg)")
