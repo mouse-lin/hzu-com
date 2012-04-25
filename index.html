@@ -40,7 +40,6 @@
       //User: Mouse
       //Comment:  load menu等html文件, 并且判断时间显示出页面
       //date: 2012-04-23
-      //$("#photo-show").load("photo_show.html");
       var date = new Date();
       var hour = date.getHours();
       var sunHour = [6,7,8,9,10,11,12,13,14,15,16,17,18];
@@ -51,9 +50,10 @@
       var weatherHtmlFile = dayTime == "sun"? "sun.html" : "night.html"; 
       weather.load(weatherHtmlFile);
 
+      $("#photo-show").load("photo_show.html");
       $("#menu").load("menu.html");
       $("#foot").load("foot.html");
-      //$("#below_content").load("below_content.html");
+      $("#below_content").load("below_content.html");
       
       $(document).ready(function(){ 
           start(dayTime); // 启动天气效果;
@@ -77,20 +77,20 @@
           }); 
           //---------------------------------------------
           // buttons for next and previous item						 
-         // var buttons = { previous:$('#jslidernews1 .button-previous') ,
-         //         next:$('#jslidernews1 .button-next') };			
-         //  $('#jslidernews1').lofJSidernews( { interval : 4000,
-         //                   direction		: 'opacitys',	
-         //                   easing			: 'easeInOutExpo',
-         //                   duration		: 1200,
-         //                   auto		 	: false,
-         //                   maxItemDisplay  : 4,
-         //                   navPosition     : 'horizontal', // horizontal
-         //                   navigatorHeight : 32,
-         //                   navigatorWidth  : 80,
-         //                   mainWidth		: 980,
-         //                   buttons			: buttons 
-         // } );	
+          var buttons = { previous:$('#jslidernews1 .button-previous') ,
+                  next:$('#jslidernews1 .button-next') };			
+           $('#jslidernews1').lofJSidernews( { interval : 4000,
+                            direction		: 'opacitys',	
+                            easing			: 'easeInOutExpo',
+                            duration		: 1200,
+                            auto		 	: false,
+                            maxItemDisplay  : 4,
+                            navPosition     : 'horizontal', // horizontal
+                            navigatorHeight : 32,
+                            navigatorWidth  : 80,
+                            mainWidth		: 980,
+                            buttons			: buttons 
+          } );	
           
       });
     </script>
