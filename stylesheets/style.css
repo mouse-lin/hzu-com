@@ -91,11 +91,10 @@
     width: 878px;
 }
 #top_content {
-background-color: rgba(0, 0, 0, 0.6);
-border-radius: 0 2em 6em 6em;
-box-shadow: 4px 13px 11px #000000;
-margin-bottom: 45px;
-padding:15px 0 1px 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 0 2em 6em 6em;
+    box-shadow: 4px 13px 11px #000000;
+    padding:15px 0 1px 0;
 }
 .well h2 {
     margin-left: 10px;
