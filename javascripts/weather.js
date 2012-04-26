@@ -28,11 +28,17 @@ function startMove(start){
     start.animate({ left: "+=30" },4000);  
 };
 
+function changeBackGround(weather){ 
+   var imageName = weather == "sun"? "sun/sun.jpg": "night/night.jpg";
+   $("#body").css("background-image","url(images/weather/"+ imageName + ")");
+};
+
 // 启动天气
 function start(dayTime){  
    //白天情景
    if(dayTime == "sun"){  
-       $("#body").css("background-image","url(images/weather/sun/sun.jpg)")
+       $("day_change").html("黑夜"); // 将按钮变为黑夜
+       changeBackGround(dayTime);
        var cloudRed = $('#cloud-red');
        var cloudGreen = $('#cloud-green');
        var elSunRays = $('#sun-rays');
@@ -53,7 +59,8 @@ function start(dayTime){
    }else{ 
       //---------------------------------------------
       // 晚上情景
-      $("#body").css("background-image","url(images/weather/night/night.jpg)")
+      $("day_change").html("白天"); // 将按钮变为黑夜
+      changeBackGround(dayTime);
       var moon = $('#moon');
       var starF = $('#star_f');
       var starFi = $('#star_fi');

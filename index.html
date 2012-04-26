@@ -54,7 +54,8 @@ int main()
       <!--
       <canvas id='show-rain' width="800" height="600"></canvas>
       -->
-      <div style="position:absolute;top:90px"><span id="hideClass" class="badge badge-error">隐藏</span></div>
+      <div style="position:absolute;top:60px"><span id="hideClass" class="badge badge-error">隐藏</span></div>
+      <div style="position:fixed;top:65px;right:0px"><span id="day_change" class="badge badge-info">黑夜</span></div>
       <div id="below_content" class="container" style="width:90%;margin-top:45px;" ></div>
       <div id="bottom-display">
         <h3>{ Think Different }</h3>
@@ -97,6 +98,19 @@ int main()
              $("#top_content").show("slow"); 
              $("#hideClass").html("隐藏");
           });
+
+         $("#day_change").click(function(){ 
+             if(dayTime == "sun"){ 
+                dayTime = "night";
+                changeBackGround(dayTime);
+                $("#day_change").html("白天");
+             }else{ 
+                dayTime = "sun";
+                changeBackGround(dayTime);
+                $("#day_change").html("黑夜");
+             }
+         })
+
           start(dayTime); // 启动天气效果;
           // 返回顶部按钮
           $("#back-top").hide();
