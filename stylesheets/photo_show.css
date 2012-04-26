@@ -1,7 +1,11 @@
 @charset "utf-8";
-/*处理图片，当图片不够大小的时候 - Mouse*/
+/*处理图片，当图片不够大小的时候 |  附加图片处理css - Mouse*/
 .sliders-wrapper{ 
   width: 730px;
+}
+
+.sliders-wrapper li{ 
+    width: 730px;
 }
 
 .sliders-wrapper li img{ 
@@ -24,7 +28,15 @@
     height:340px;    
 }
 
+.sliders-wrap-inner{ 
+    left: 0px; 
+    width: 7840px;
+}
 
+.navigator-wrap-inner li{ 
+    height: 32px; 
+    width: 80px;
+}
 
 /* CSS Document */
 #photo-show {
