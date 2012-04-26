@@ -1,3 +1,9 @@
+// 提供全局weather对象: 
+//  weather: div对象
+//  weatherHtmlFile: html file
+//  dayTime:  时间 "sun" or "night"
+Weather = {  }; 
+
 //白天云朵移动效果
 function cloudMoveLeft(cloud){ 
     cloud.animate({ left: "+=30" },4000,function(){ 
@@ -32,8 +38,8 @@ function start(dayTime){
        var elSunRays = $('#sun-rays');
        var sunFace = $('#sun-face');
        var sunRotation = 0;
-       //cloudMoveRight(cloudRed);
-       //cloudMoveLeft(cloudGreen);
+       cloudMoveRight(cloudRed);
+       cloudMoveLeft(cloudGreen);
        setInterval(function() {
            if (elSunRays) {
                sunRotation ++;

@@ -77,33 +77,22 @@ int main()
       //User: Mouse
       //Comment:  load menu等html文件, 并且判断时间显示出页面
       //date: 2012-04-23
-      var date = new Date();
-      var hour = date.getHours();
-      var sunHour = [6,7,8,9,10,11,12,13,14,15,16,17,18];
-      var dayTime = "night";
-      if($.inArray(hour,sunHour) != -1 ){  
-          dayTime = "sun";
-          $("#day_change").html("黑夜");
-      }else{ 
-          $("#day_change").html("白天");
-      };
-      var weather = $("#weather");
-      var weatherHtmlFile = dayTime == "sun"? "sun.html" : "night.html"; 
-      weather.load(weatherHtmlFile);
+      timeInit();
+      Weather.weather.load(Weather.weatherHtmlFile);
       $("#photo-show").load("photo_show.html");
       $("#menu").load("menu.html");
       $("#foot").load("foot.html");
       $("#below_content").load("below_content.html");
-
       $(document).ready(function(){ 
           hideActionInit();
-          weatherChangeInit(dayTime,weather,weatherHtmlFile);
-          start(dayTime); // 启动天气效果;
+          weatherChangeInit(Weather.dayTime,Weather.weather,Weather.weatherHtmlFile);
+          start(Weather.dayTime); // 启动天气效果;
           backToTop(); //back to top 按钮;
           photoShowInit(); //照片展示
       });
     </script>
 <!-- js 效果实现end   -->
+
     <p id="back-top"><a href="#top"><span></span><em>回到顶部</em> </a></p>
     <div id="board-line"><img src="images/BoardLine.png"/></div>
   </body>

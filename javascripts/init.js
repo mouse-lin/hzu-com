@@ -1,6 +1,22 @@
 //---------------------------------------------
 // 用于初始化所有的函数, 这里的函数将直接在html页面调用
 
+// 时间判断初始化
+function timeInit(){ 
+   var date = new Date();
+   var hour = date.getHours();
+   var sunHour = [6,7,8,9,10,11,12,13,14,15,16,17,18];
+   Weather.dayTime = "night";
+   if($.inArray(hour,sunHour) != -1 ){  
+       Weather.dayTime = "sun";
+       $("#day_change").html("黑夜");
+   }else{ 
+       $("#day_change").html("白天");
+   };
+   Weather.weather = $("#weather");
+   Weather.weatherHtmlFile = Weather.dayTime == "sun"? "sun.html" : "night.html"; 
+}
+
 //back-to-top
 function backToTop(){ 
     $("#back-top").hide();
