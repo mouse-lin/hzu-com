@@ -68,6 +68,9 @@ int main()
     <div id="foot"></div>
 
     <script type="text/javascript" charset="utf-8">
+
+      //var myDay = ["sun", "night"]; /* 配置上*/
+
       //User: Mouse
       //Comment:  load menu等html文件, 并且判断时间显示出页面
       //date: 2012-04-23
@@ -75,8 +78,8 @@ int main()
       var hour = date.getHours();
       var sunHour = [6,7,8,9,10,11,12,13,14,15,16,17,18];
       var dayTime = "night";
-      if($.inArray(hour,sunHour) == -1 )
-        dayTime = "sun";
+      if($.inArray(hour,sunHour) != -1 )
+          dayTime = "sun";
       var weather = $("#weather");
       var weatherHtmlFile = dayTime == "sun"? "sun.html" : "night.html"; 
       weather.load(weatherHtmlFile);
