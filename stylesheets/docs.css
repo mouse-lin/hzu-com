@@ -266,13 +266,13 @@ hr.soften {
 /* Footer
 -------------------------------------------------- */
 .footer {
-    background-color: #EEEEEE;
+    background-color: #fff;
     background-image: url("../images/key_board.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 1201px 200px;
     border-radius: 8em 8em 1em 1em;
-    box-shadow: 0 -15px 10px #000000;
+    box-shadow: 3px -5px 5px #555;
     height: 75px;
     margin-top: 160px;
     padding: 71px 0 77px;
@@ -291,6 +291,11 @@ hr.soften {
   padding: 15px;
   width: 400px;
 } 
+.footer .description:hover {
+    -webkit-transform:  scale(1.19);
+    -moz-transform: scale(1.19);
+    -o-transform: scale(1.19) ;
+}
 
 
 
