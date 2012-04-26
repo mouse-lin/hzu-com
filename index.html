@@ -74,6 +74,21 @@ int main()
 
 <!-- js 效果实现   -->
     <script type="text/javascript" charset="utf-8">
+      function GetRequest() {
+           var url = location.search; //获取url中"?"符后的字串
+           var theRequest = new Object();
+           if (url.indexOf("?") != -1) {
+              var str = url.substr(1);
+              strs = str.split("&");
+              for(var i = 0; i < strs.length; i ++) {
+                 theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+              }
+           }
+           return theRequest;
+      }
+
+      //var myDay = ["sun", "night"]; /* 配置上*/
+
       //User: Mouse
       //Comment:  load menu等html文件, 并且判断时间显示出页面
       //date: 2012-04-23
@@ -82,7 +97,17 @@ int main()
       $("#photo-show").load("photo_show.html");
       $("#menu").load("menu.html");
       $("#foot").load("foot.html");
-      $("#below_content").load("below_content.html");
+
+      var Request = GetRequest();
+      if ( Request['page'] == 'articles' ) {
+          $("#below_content").load("articles.html");
+      }
+      else if(Request['page'] == 'all_articles'){  
+          $("#below_content").load("all_articles.html");
+      } else {
+          $("#below_content").load("below_content.html");
+      }
+
       $(document).ready(function(){ 
           hideActionInit();
           weatherChangeInit(Weather.dayTime,Weather.weather,Weather.weatherHtmlFile);
