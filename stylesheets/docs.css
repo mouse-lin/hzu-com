@@ -7,8 +7,6 @@ body {
 }
 
 
-/* Tweak navbar brand link to be super sleek
--------------------------------------------------- */
 .navbar-fixed-top .brand {
   padding-right: 0;
   padding-left: 0;
@@ -25,13 +23,10 @@ body {
 }
 
 
-/* Space out sub-sections more
--------------------------------------------------- */
 section {
   padding-top: 60px;
 }
 
-/* Faded out hr */
 hr.soften {
   height: 1px;
   margin: 54px 0;
