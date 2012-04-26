@@ -49,7 +49,7 @@ function start(dayTime){
                elSunRays.css('-ms-transform', 'rotate(' + sunRotation + 'deg)');
                elSunRays.css('transform', 'rotate(' + sunRotation + 'deg)');
            }
-       }, 30);
+       }, 50);
    }else{ 
       //---------------------------------------------
       // 晚上情景
