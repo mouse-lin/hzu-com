@@ -1,3 +1,45 @@
+/*content*/
+#content{ 
+    padding-top:40px;
+}
+
+/*content布局上面代码显示*/
+#content_code{ 
+    border: medium none;
+    left: 159px; 
+    padding: 10px;
+    position: absolute;
+    top: 240px;
+}
+
+
+#content_code_show{ 
+    border: medium none; 
+    box-shadow: 3px 3px 1px inset; 
+    margin: 0; 
+    padding: 4px;
+}
+
+.logo_image{ 
+    border-radius: 4em 4em 4em 4em; 
+    box-shadow: 2px 3px 1px;
+    left: 405px;
+    position: absolute;
+    top: 384px;
+    width: 112px; 
+}
+
+.weather_change_button{ 
+    position:fixed;
+    top:65px;
+    right:0px
+}
+
+.hide_action{ 
+    position:absolute;
+    top:60px
+}
+
 /* back to top */
 #back-top {
     position: fixed;

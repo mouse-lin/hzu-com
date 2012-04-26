@@ -14,13 +14,11 @@
 
     <!--天气js-->
     <script type="text/javascript" src="javascripts/weather.js"></script>
-    
     <!--Photo show-->
     <link rel="stylesheet" type="text/css" href="stylesheets/photo_show.css">
     <script type="text/javascript" src="javascripts/jquery.easing.js"></script>
     <script type="text/javascript" src="javascripts/script.js"></script>
-
-    <!--google code-->
+    <!--code 高亮显示-->
     <link rel="stylesheet" href="stylesheets/prettify.css"/>
     <script type="text/javascript" src="javascripts/prettify.js"></script>
     <script type="text/javascript" src="javascripts/application.js"></script>
@@ -29,11 +27,15 @@
 
   <body id="body">
 
+    <!-- 上部导航-->
     <div id="menu"></div>
-    <div id="content" style="padding-top:40px;">
+    <!--  主要内容显示 -->
+    <div id="content">
+      <!--  顶层内容显示 -->
       <div id='top_content'>
-        <div class="span3 well" style=" border: medium none; left: 159px; padding: 10px; position: absolute; top: 240px; ">
-          <pre class="prettyprint linenums" style=" border: medium none; box-shadow: 3px 3px 1px inset; margin: 0; padding: 4px; ">
+        <div class="span3 well" id="content_code">
+          <!--   因为代码显示原因，这里缩进不采用标准 -->
+          <pre class="prettyprint linenums" id="content_code_show">
 int main()
 { 
   printf("Hello, world!\n"); 
@@ -46,23 +48,25 @@ int main()
 */
           </pre>
         </div>
-        <img src="images/logo.png" style=" border-radius: 4em 4em 4em 4em; box-shadow: 2px 3px 1px; left: 405px; position: absolute; top: 384px; width: 112px; ">
+        <img class="logo_image" src="images/logo.png"></img>
+        <!--  照片展示 -->
         <div id="photo-show"></div>
+        <!--  天气时间展示 -->
         <div id="weather"></div>
       </div>
-      <!--
-      <canvas id='show-rain' width="800" height="600"></canvas>
-      -->
-      <div style="position:absolute;top:60px"><span id="hideClass" class="badge badge-error">隐藏</span></div>
-      <div style="position:fixed;top:65px;right:0px"><span id="day_change" class="badge badge-info">黑夜</span></div>
+      <div class="hide_action">
+        <span id="hide_class" class="badge badge-error">隐藏</span>
+      </div>
+      <div class="weather_change_button">
+        <span id="day_change" class="badge badge-info">黑夜</span>
+      </div>
       <div id="below_content" class="container" style="width:90%;margin-top:45px;" ></div>
       <div id="bottom-display">
         <h3>{ Think Different }</h3>
         <h1>&</h1>
       </div>
       <div id="display-board">
-        <br>
-        <h2>< Work Hard ></h2>
+        <br><h2>< Work Hard ></h2>
       </div>
     </div>
     <div id="foot"></div>
@@ -91,12 +95,12 @@ int main()
       $("#below_content").load("below_content.html");
 
       $(document).ready(function(){ 
-          $("#hideClass").toggle(function(){ 
+          $("#hide_class").toggle(function(){ 
               $("#top_content").hide("slow");
-              $("#hideClass").html("显示") ;
+              $("#hide_class").html("显示") ;
           },function(){ 
              $("#top_content").show("slow"); 
-             $("#hideClass").html("隐藏");
+             $("#hide_class").html("隐藏");
           });
 
          $("#day_change").click(function(){ 
@@ -163,6 +167,3 @@ int main()
 
   </body>
 </html>
-<!--rain
-<script type="text/javascript" src="javascripts/rain.js"></script>
--->
