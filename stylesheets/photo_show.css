@@ -1,6 +1,32 @@
 @charset "utf-8";
-/* CSS Document */
+/*处理图片，当图片不够大小的时候 - Mouse*/
+.sliders-wrapper{ 
+  width: 730px;
+}
 
+.sliders-wrapper li img{ 
+    width: 800px;
+    height: 340px;
+}
+
+.navigator-wrap-inner img{ 
+    width: 70px;
+    height: 25px;
+}
+
+#jslidernews1{ 
+    width:730px; 
+    height:340px;
+}
+
+.main-slider-content{ 
+    width:730px; 
+    height:340px;    
+}
+
+
+
+/* CSS Document */
 #photo-show {
     background: none repeat scroll 0 0 #CECECE;
     border-radius: 10px 10px 10px 10px;
