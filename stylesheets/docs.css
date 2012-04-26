@@ -266,17 +266,31 @@ hr.soften {
 /* Footer
 -------------------------------------------------- */
 .footer {
-  margin-top: 160px;
-  padding: 100px 0px 48px;
-  box-shadow: 0 -15px 10px #000000;
-  border-radius: 8em 8em 1em 1em;
-  background-color: #eee;
-  height: 75px;
+    background-color: #EEEEEE;
+    background-image: url("../images/key_board.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 1201px 200px;
+    border-radius: 8em 8em 1em 1em;
+    box-shadow: 0 -15px 10px #000000;
+    height: 75px;
+    margin-top: 160px;
+    padding: 71px 0 77px;
 }
 .footer p {
-  margin-bottom: 0;
-  color: #555;
+    border-bottom: 1px dashed #CECECE;
+    color: #555555;
+    margin-bottom: 4px;
 }
+.footer .description {
+  background-color: #FFFFFF;
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 4px 4px 9px #000000;
+  margin: 0 auto;
+  padding: 15px;
+  width: 400px;
+} 
 
 
 
