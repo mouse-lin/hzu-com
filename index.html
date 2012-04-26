@@ -13,6 +13,8 @@
     <script type="text/javascript" src="javascripts/jquery.js"></script>
     <script type="text/javascript" src="javascripts/init.js"></script>
 
+    <script type="text/javascript" src="javascripts/bootstrap-modal.js"></script>
+
     <!--天气js-->
     <script type="text/javascript" src="javascripts/weather.js"></script>
     <!--Photo show-->
@@ -55,6 +57,32 @@ int main()
         <!--  天气时间展示 -->
         <div id="weather"></div>
       </div>
+
+      <div id="myModal" class="modal hide fade">
+        <div class="modal-header">
+          <a class="close" data-dismiss="modal" >&times;</a>
+          <h3>登录</h3>
+        </div>
+        <div class="modal-body">
+          <form>
+            <center>
+              <label> 帐号</label>
+              <input></input>
+              <label>密码</label>
+              <input></input>
+              <br>
+              <input type="checkbox" value="option2" id="inlineCheckbox2"> 记住我</input>
+            </center>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <center>
+            <a href="#" class="btn btn-primary">登录</a>
+            <a href="#" class="btn" data-dismiss="modal" >取消</a>
+          </center>
+        </div>
+      </div>
+
       <div class="hide_action">
         <span id="hide_class" class="badge badge-error">隐藏</span>
       </div>
@@ -74,18 +102,6 @@ int main()
 
 <!-- js 效果实现   -->
     <script type="text/javascript" charset="utf-8">
-      function GetRequest() {
-           var url = location.search; //获取url中"?"符后的字串
-           var theRequest = new Object();
-           if (url.indexOf("?") != -1) {
-              var str = url.substr(1);
-              strs = str.split("&");
-              for(var i = 0; i < strs.length; i ++) {
-                 theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
-              }
-           }
-           return theRequest;
-      }
       //User: Mouse
       //Comment:  load menu等html文件, 并且判断时间显示出页面
       //date: 2012-04-23
@@ -94,7 +110,6 @@ int main()
       $("#photo-show").load("photo_show.html");
       $("#menu").load("menu.html");
       $("#foot").load("foot.html");
-
       var Request = GetRequest();
       if (Request['page']) 
           $("#below_content").load(Request['page'] + ".html",function(){ 
@@ -107,6 +122,9 @@ int main()
               $("#index").addClass("active");
           });
       $(document).ready(function(){ 
+          $("#login").click(function(){ 
+              $("#myModal").modal();
+          })
           hideActionInit();
           weatherChangeInit(Weather.dayTime,Weather.weather,Weather.weatherHtmlFile);
           start(Weather.dayTime); // 启动天气效果;

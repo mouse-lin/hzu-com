@@ -58,6 +58,7 @@ function start(dayTime){
       var moon = $('#moon');
       var starF = $('#star_f');
       var starFi = $('#star_fi');
+      var starTest = $('#star_test');
       var moonMove = 0, time = 0;
       setInterval(function(){ 
          if(moon){  
@@ -84,6 +85,12 @@ function start(dayTime){
              starFi.css('-moz-transform', 'rotate(' + moonMove + 'deg)');
              starFi.css('-ms-transform', 'rotate(' + moonMove + 'deg)');
              starFi.css('transform', 'rotate(' + moonMove + 'deg)');
+
+             starTest.css('-webkit-transform', 'rotate(' + moonMove + 'deg)');
+             starTest.css('-moz-transform', 'rotate(' + moonMove + 'deg)');
+             starTest.css('-ms-transform', 'rotate(' + moonMove + 'deg)');
+             starTest.css('transform', 'rotate(' + moonMove + 'deg)');
+
          };
        },50);
    };
