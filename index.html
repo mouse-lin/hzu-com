@@ -47,7 +47,7 @@ int main()
 */
           </pre>
         </div>
-        <img src="images/logo.png" alt="sun" id="sun-face" style=" border-radius: 4em 4em 4em 4em; box-shadow: 2px 3px 1px; left: 432px; position: absolute; top: 384px; width: 112px; ">
+        <img src="images/logo.png" style=" border-radius: 4em 4em 4em 4em; box-shadow: 2px 3px 1px; left: 405px; position: absolute; top: 384px; width: 112px; ">
         <div id="photo-show"></div>
         <div id="weather"></div>
       </div>
@@ -104,10 +104,19 @@ int main()
                 dayTime = "night";
                 changeBackGround(dayTime);
                 $("#day_change").html("白天");
+                weatherHtmlFile = "night.html";
+                weather.load(weatherHtmlFile,function(){ 
+                    start(dayTime)
+                });
              }else{ 
                 dayTime = "sun";
                 changeBackGround(dayTime);
                 $("#day_change").html("黑夜");
+                weatherHtmlFile = "sun.html";
+                weather.load(weatherHtmlFile,function(){ 
+                    start(dayTime)
+                });
+
              }
          })
 
