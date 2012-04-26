@@ -1,22 +1,10 @@
-//function setTime(){ 
-//   //判断时间
-//   var date = new Date();
-//   var hour = date.getHours();
-//   var sunHour = [6,7,8,9,10,11,12,13,14,15,16,17,18];
-//   var dayTime = "night";
-//   if($.inArray(hour,sunHour) != -1 )
-//     dayTime = "sun";
-//   var weather = $("#weather");
-//   var weatherHtmlFile = dayTime == "sun"? "sun.html" : "night.html"; 
-//   weather.load(weatherHtmlFile);
-//};
-
 //白天云朵移动效果
 function cloudMoveLeft(cloud){ 
     cloud.animate({ left: "+=30" },4000,function(){ 
         cloudMoveRight(cloud);
     })
 }
+
 function cloudMoveRight(cloud){ 
     cloud.animate({ left: "-=30" },4000,function(){ 
         cloudMoveLeft(cloud);

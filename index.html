@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="stylesheets/bootstrap-responsive.css"/>
     <link rel="stylesheet" href="stylesheets/style.css"/>
     <script type="text/javascript" src="javascripts/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/init.js"></script>
 
     <!--天气js-->
     <script type="text/javascript" src="javascripts/weather.js"></script>
@@ -71,6 +72,7 @@ int main()
     </div>
     <div id="foot"></div>
 
+<!-- js 效果实现   -->
     <script type="text/javascript" charset="utf-8">
       //User: Mouse
       //Comment:  load menu等html文件, 并且判断时间显示出页面
@@ -88,82 +90,21 @@ int main()
       var weather = $("#weather");
       var weatherHtmlFile = dayTime == "sun"? "sun.html" : "night.html"; 
       weather.load(weatherHtmlFile);
-
       $("#photo-show").load("photo_show.html");
       $("#menu").load("menu.html");
       $("#foot").load("foot.html");
       $("#below_content").load("below_content.html");
 
       $(document).ready(function(){ 
-          $("#hide_class").toggle(function(){ 
-              $("#top_content").hide("slow");
-              $("#hide_class").html("显示") ;
-          },function(){ 
-             $("#top_content").show("slow"); 
-             $("#hide_class").html("隐藏");
-          });
-
-         $("#day_change").click(function(){ 
-             if(dayTime == "sun"){ 
-                dayTime = "night";
-                changeBackGround(dayTime);
-                $("#day_change").html("白天");
-                weatherHtmlFile = "night.html";
-                weather.load(weatherHtmlFile,function(){ 
-                    start(dayTime)
-                });
-             }else{ 
-                dayTime = "sun";
-                changeBackGround(dayTime);
-                $("#day_change").html("黑夜");
-                weatherHtmlFile = "sun.html";
-                weather.load(weatherHtmlFile,function(){ 
-                    start(dayTime)
-                });
-
-             }
-         })
-
+          hideActionInit();
+          weatherChangeInit(dayTime,weather,weatherHtmlFile);
           start(dayTime); // 启动天气效果;
-          // 返回顶部按钮
-          $("#back-top").hide();
-          $(function () {
-              $(window).scroll(function () {
-                  if ($(this).scrollTop() > 100) {
-                      $('#back-top').fadeIn();
-                  } else {
-                      $('#back-top').fadeOut();
-                  }
-              });
-
-              $('#back-top').click(function () {
-                  $('body,html').animate({
-                      scrollTop: 0
-                  }, 800);
-                  return false;
-              });
-          }); 
-          //---------------------------------------------
-          // buttons for next and previous item						 
-          var buttons = { previous:$('#jslidernews1 .button-previous') ,
-                  next:$('#jslidernews1 .button-next') };			
-           $('#jslidernews1').lofJSidernews( { interval : 4000,
-                            direction		: 'opacitys',	
-                            easing			: 'easeInOutExpo',
-                            duration		: 1200,
-                            auto		 	: false,
-                            maxItemDisplay  : 4,
-                            navPosition     : 'horizontal', // horizontal
-                            navigatorHeight : 32,
-                            navigatorWidth  : 80,
-                            mainWidth		: 980,
-                            buttons			: buttons 
-          } );	
-          
+          backToTop(); //back to top 按钮;
+          photoShowInit(); //照片展示
       });
     </script>
+<!-- js 效果实现end   -->
     <p id="back-top"><a href="#top"><span></span><em>回到顶部</em> </a></p>
     <div id="board-line"><img src="images/BoardLine.png"/></div>
-
   </body>
 </html>

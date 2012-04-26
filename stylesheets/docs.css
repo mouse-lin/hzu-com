@@ -2,8 +2,6 @@
 body {
   position: relative;
   background-color: #fff;
-  /*background-image: url(../images/bg_body.jpg);*/
-  /*background-image: url(../images/weather/night/night.jpg)*/;
   background-repeat: repeat;
   background-position: 0 40px;
 }
