@@ -4,6 +4,7 @@ body {
   background-color: #fff;
   background-repeat: repeat;
   background-position: 0 40px;
+  min-width: 1330px;
 }
 
 
