@@ -106,9 +106,15 @@ int main()
       //Comment:  load menu等html文件, 并且判断时间显示出页面
       //date: 2012-04-23
       timeInit();
-      Weather.weather.load(Weather.weatherHtmlFile);
-      $("#photo-show").load("photo_show.html");
-      $("#menu").load("menu.html");
+      Weather.weather.load(Weather.weatherHtmlFile,function(){ 
+          start(Weather.dayTime);
+      });
+      $("#photo-show").load("photo_show.html",function(){ 
+          photoShowInit();
+      });
+      $("#menu").load("menu.html",function(){ 
+          loginClick();
+      });
       $("#foot").load("foot.html");
       var Request = GetRequest();
       if (Request['page']) 
@@ -122,14 +128,13 @@ int main()
               $("#index").addClass("active");
           });
       $(document).ready(function(){ 
-          $("#login").click(function(){ 
-              $("#myModal").modal();
-          })
+          /* 这边几个函数： hideAction、photoShowInit、start(Weather.dayTime) 都需要移到相应的load时间回调函数中*/
+          //loginClick(); 
           hideActionInit();
           weatherChangeInit(Weather.dayTime,Weather.weather,Weather.weatherHtmlFile);
-          start(Weather.dayTime); // 启动天气效果;
+          //start(Weather.dayTime); // 启动天气效果;
           backToTop(); //back to top 按钮;
-          photoShowInit(); //照片展示
+          //photoShowInit(); //照片展示
       });
     </script>
 <!-- js 效果实现end   -->

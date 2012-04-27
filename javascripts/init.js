@@ -62,6 +62,12 @@ function weatherChangeInit(dayTime,weather,weatherHtmlFile){
     })
 }
 
+function loginClick(){ 
+    $("#login").click(function(){ 
+        $("#myModal").modal();
+    });
+}
+
 
 // 隐藏功能函数初始化
 function hideActionInit(){ 
