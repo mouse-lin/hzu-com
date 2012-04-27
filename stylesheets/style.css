@@ -31,13 +31,20 @@
 
 .weather_change_button{ 
     position:fixed;
-    top:65px;
+    top:85px;
     right:0px
 }
-
+#day_change {
+    border-radius: 9px 0 0 9px;
+    font-size: 13px;
+}
 .hide_action{ 
     position:absolute;
-    top:60px
+    top:85px;
+}
+#hide_class {
+    border-radius: 0 9px 9px 0;
+    font-size: 13px;
 }
 
 /* back to top */
