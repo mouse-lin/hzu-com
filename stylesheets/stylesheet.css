@@ -2998,7 +2998,7 @@ input[type="submit"].btn.btn-mini {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 .navbar .nav > li > a:hover {
-  background-color: transparent;
+  background-color: #111111;
   color: #ffffff;
   text-decoration: none;
 }
@@ -3006,7 +3006,7 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav .active > a:hover {
   color: #ffffff;
   text-decoration: none;
-  background-color: #222222;
+  background-color: #111111;
 }
 .navbar .divider-vertical {
   height: 40px;
