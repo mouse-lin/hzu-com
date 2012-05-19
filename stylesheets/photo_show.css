@@ -1,16 +1,16 @@
 @charset "utf-8";
 /*处理图片，当图片不够大小的时候 |  附加图片处理css - Mouse*/
 .sliders-wrapper{ 
-  width: 730px;
+  width: 640px;
 }
 
 .sliders-wrapper li{ 
-    width: 730px;
+    width: 640px;
 }
 
 .sliders-wrapper li img{ 
-    width: 800px;
-    height: 340px;
+    width: 640px;
+    height: 350px;
 }
 
 .navigator-wrap-inner img{ 
@@ -19,12 +19,12 @@
 }
 
 #jslidernews1{ 
-    width:730px; 
+    width:640px; 
     height:340px;
 }
 
 .main-slider-content{ 
-    width:730px; 
+    width:640px; 
     height:340px;    
 }
 
@@ -43,9 +43,9 @@
     background: none repeat scroll 0 0 #CECECE;
     border-radius: 10px 10px 10px 10px;
     font-size: 12px;
-    margin: 105px 110px 31px 550px;
+    margin: 105px 110px 31px 580px;
     padding: 10px;
-    width: 730px;
+    width: 640px;
 }
 
 /* slider layout */
